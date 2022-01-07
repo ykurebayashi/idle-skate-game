@@ -15,6 +15,9 @@ public class rampScript : MonoBehaviour
     public float timer;
     public float delayAmount = 1f;
 
+    public GameObject rampsMenu, theRampToBeBought;
+    public GameObject openStoreBtn, closeStoreBtn;
+
     void Start () {
         GameObject moneyObj = GameObject.Find("Money");
         GameObject conisPerSecObj = GameObject.Find("CoinsPerSecond");
@@ -98,5 +101,15 @@ public class rampScript : MonoBehaviour
 
         
         getCoinsPerSec();
+    }
+
+    public void activateStore() {
+        rampsMenu.SetActive(true);
+        openStoreBtn.SetActive(true);
+    }
+
+    public void deactivateStore() {
+        rampsMenu.SetActive(false);
+        closeStoreBtn.SetActive(true);
     }
 }
